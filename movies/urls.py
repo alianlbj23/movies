@@ -1,5 +1,8 @@
 from django.urls import path
-from movies import views
+from django.contrib import admin
+from movies.views import index, show
 urlpatterns = [
-    path('', views.index)
+    path('', index),
+    path('admin/', admin.site.urls),
+    path('show/' , show),
 ]

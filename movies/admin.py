@@ -71,3 +71,43 @@ class Box_office_champion_year_worldAdmin(admin.ModelAdmin):
 
 admin.site.register(Box_office_champion_year_world, Box_office_champion_year_worldAdmin)
 #-----------------------------------------------------------------------------------2
+
+#------------------------------------------------------------------------Taiwan movies 2021 rank START
+from .models import Tawain_movies_rank_2021
+class Tawain_movies_rank_2021Admin(admin.ModelAdmin):
+    list_display = ('rank', 'area', 'name', 'dates', 'applicant', 'tickets', 'Total_Sale_Figure')
+
+admin.site.register(Tawain_movies_rank_2021, Tawain_movies_rank_2021Admin)
+#------------------------------------------------------------------------Taiwan movies rank END
+
+#------------------------------------------------------------------------Taiwan movies 2020 rank START
+from .models import Tawain_movies_rank_2020
+class Tawain_movies_rank_2020Admin(admin.ModelAdmin):
+    list_display = ('rank', 'area', 'name', 'dates', 'applicant', 'tickets', 'Total_Sale_Figure')
+
+admin.site.register(Tawain_movies_rank_2020, Tawain_movies_rank_2020Admin)
+#------------------------------------------------------------------------Taiwan movies rank END
+
+#------------------------------------------------------------------------Taiwan movies 2019 rank START
+from .models import Tawain_movies_rank_2019
+class Tawain_movies_rank_2019Admin(admin.ModelAdmin):
+    list_display = ('rank', 'area', 'name', 'dates', 'applicant', 'tickets', 'Total_Sale_Figure')
+
+admin.site.register(Tawain_movies_rank_2019, Tawain_movies_rank_2019Admin)
+#------------------------------------------------------------------------Taiwan movies rank END
+
+#------------------------------------------------------------------------Taiwan movies 2018 rank START
+from .models import Tawain_movies_rank_2018
+class Tawain_movies_rank_2018Admin(admin.ModelAdmin):
+    list_display = ('rank', 'area', 'name', 'dates', 'applicant', 'tickets', 'Total_Sale_Figure')
+
+admin.site.register(Tawain_movies_rank_2018, Tawain_movies_rank_2018Admin)
+#------------------------------------------------------------------------Taiwan movies rank END
+
+#------------------------------------------------------------------------Taiwan movies 2017 rank START
+from .models import Tawain_movies_rank_2017
+class Tawain_movies_rank_2017Admin(admin.ModelAdmin):
+    list_display = ('rank', 'area', 'name', 'dates', 'applicant', 'tickets', 'Total_Sale_Figure')
+
+admin.site.register(Tawain_movies_rank_2017, Tawain_movies_rank_2017Admin)
+#------------------------------------------------------------------------Taiwan movies rank END

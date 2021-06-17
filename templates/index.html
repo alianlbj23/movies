@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %} 首頁 {% endblock %}
+{% block content %} 
+
+<h1 class="display-6"><font color="#FFFFF" ><strong>Popular movie</strong></font></h1>
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="3000">
+      <img src="https://i.imgur.com/VHxFhzc.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>阿拉丁</h5>
+      </div>
+    </div>
+
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="https://img.onl/zAqOqJ" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>復仇者聯盟3：無限之戰</h5>
+      </div>
+    </div>
+
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="https://lh6.googleusercontent.com/UHipHSuZaWT13uINfILWWYpexKRpi8pBfIXjRTdQTpncRgnh0uxym747LDWCSPeJU3USjNRKh4H1Ze4VlBby=w1960-h2876-rw" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>復仇者聯盟4：終局之戰</h5>
+      </div>
+    </div>
+
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="https://lh4.googleusercontent.com/lBZuhB5gHE01jE4jtVQdK2NLJnpfziTpWtR_Ppd7TnMI2QJNOzANoVBsH2BuJhkP2k475HkQO0bf2OWgEX8F=w1960-h2876-rw" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>STAR WARS：原力覺醒</h5>
+      </div>
+    </div>
+    
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="https://lh5.googleusercontent.com/LCjpspEBQW4jdQKaW3vIxwmwqJ7IRNW_ZFYrVOlLWti6l1DU03rsOSUl5b9mOoQu8zoR4057jICayHK3EC5q=w1960-h2876-rw" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>艾莉塔：戰鬥天使</h5>
+      </div>
+    </div>
+
+  </div>
+
+  
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+
+{% endblock %}

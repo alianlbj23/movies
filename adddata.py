@@ -1,3 +1,4 @@
+#panda讀維基百科後寫入，有好幾種不同的表格，第一個大表格編號從0開始
 import os
 import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
@@ -123,22 +124,93 @@ for j, z in zip(movie_dic, movie_dic.values()): #j讀陣列，z讀movielist
     df2 = df[j] #讀取總體排行榜
     count = len(df2) #抓有幾個row
     q = z.objects.all() #讓q取得box_office_best_tw的東西
-    if q.count() == 0 : #如果q算出來，裡面東西為0，做
+    if q.count() == 0 : #如果q算出來，裡面東西為0，做(代表裡面沒資料)(避免資料重複輸入)
         for i in range(count):
             
             newdata = z(year = str(df2.iloc[i][0]), name = str(df2.iloc[i][1]), box_office = str(df2.iloc[i][2]), )
             newdata.save()
 #-------------------------------------------------global end
-'''
-from movies.models import year_champion
-df2 = df[1] #讀取總體排行榜
-count = len(df2) #抓有幾個row
-q = year_champion.objects.all() #讓q取得box_office_best_tw的東西
-if q.count() == 0 : #如果q算出來，裡面東西為0，做
-    for i in range(count):
-        
-        newdata = year_champion(rank = str(df2.iloc[i][0]), name = str(df2.iloc[i][1]), box_office = str(df2.iloc[i][2]),
-                                    year = str(df2.iloc[i][3]), area = str(df2.iloc[i][4]),            )
-        newdata.save()
-'''
 
+
+#-------------------------------------------------taiwan movie rank 2021 START  
+from movies.models import Tawain_movies_rank_2021
+df = pd.read_excel('.//2021到2017資料/movies_data_2021.xlsx')
+count = int(len(df))
+q = Tawain_movies_rank_2021.objects.all()
+q.delete()
+if q.count() == 0:
+    for rows in range(count):
+        newdata = Tawain_movies_rank_2021(rank = str(rows + 1), area = str(df.at[rows, "國別地區"]), name = str(df.at[rows, "中文片名"]),
+                                        dates = str(df.at[rows, "上映日期"]),applicant = str(df.at[rows, "申請人"]), tickets = df.at[rows, "累計銷售票數"], 
+                                        Total_Sale_Figure = df.at[rows, "累計銷售金額"],)
+        newdata.save()
+
+
+#-------------------------------------------------taiwan movie rank 2021 END
+
+#-------------------------------------------------taiwan movie rank 2020 START  
+from movies.models import Tawain_movies_rank_2020
+df = pd.read_excel('.//2021到2017資料/movies_data_2020.xlsx')
+count = int(len(df))
+q = Tawain_movies_rank_2020.objects.all()
+q.delete()
+if q.count() == 0:
+    for rows in range(count):
+        newdata = Tawain_movies_rank_2020(rank = str(rows + 1), area = str(df.at[rows, "國別地區"]), name = str(df.at[rows, "中文片名"]),
+                                        dates = str(df.at[rows, "上映日期"]),applicant = str(df.at[rows, "申請人"]), tickets = df.at[rows, "累計銷售票數"], 
+                                        Total_Sale_Figure = df.at[rows, "累計銷售金額"],)
+        newdata.save()
+
+
+#-------------------------------------------------taiwan movie rank 2020 END
+
+#-------------------------------------------------taiwan movie rank 2019 START  
+from movies.models import Tawain_movies_rank_2019
+df = pd.read_excel('.//2021到2017資料/movies_data_2019.xlsx')
+count = int(len(df))
+q = Tawain_movies_rank_2019.objects.all()
+q.delete()
+print(q)
+if q.count() == 0:
+    for rows in range(count):
+        newdata = Tawain_movies_rank_2019(rank = str(rows + 1), area = str(df.at[rows, "國別地區"]), name = str(df.at[rows, "中文片名"]),
+                                        dates = str(df.at[rows, "上映日期"]),applicant = str(df.at[rows, "申請人"]), tickets = df.at[rows, "累計銷售票數"], 
+                                        Total_Sale_Figure = df.at[rows, "累計銷售金額"],)
+        newdata.save()
+
+
+#-------------------------------------------------taiwan movie rank 2019 END
+
+#-------------------------------------------------taiwan movie rank 2018 START  
+from movies.models import Tawain_movies_rank_2018
+df = pd.read_excel('.//2021到2017資料/movies_data_2018.xlsx')
+count = int(len(df))
+q = Tawain_movies_rank_2018.objects.all()
+#q.delete()
+#print(q)
+if q.count() == 0:
+    for rows in range(count):
+        newdata = Tawain_movies_rank_2018(rank = str(rows + 1), area = str(df.at[rows, "國別地區"]), name = str(df.at[rows, "中文片名"]),
+                                        dates = str(df.at[rows, "上映日期"]),applicant = str(df.at[rows, "申請人"]), tickets = df.at[rows, "累計銷售票數"], 
+                                        Total_Sale_Figure = df.at[rows, "累計銷售金額"],)
+        newdata.save()
+
+
+#-------------------------------------------------taiwan movie rank 2018 END
+
+#-------------------------------------------------taiwan movie rank 2017 START  
+from movies.models import Tawain_movies_rank_2017
+df = pd.read_excel('.//2021到2017資料/movies_data_2017.xlsx')
+count = int(len(df))
+q = Tawain_movies_rank_2017.objects.all()
+#q.delete()
+#print(q)
+if q.count() == 0:
+    for rows in range(count):
+        newdata = Tawain_movies_rank_2017(rank = str(rows + 1), area = str(df.at[rows, "國別地區"]), name = str(df.at[rows, "中文片名"]),
+                                        dates = str(df.at[rows, "上映日期"]),applicant = str(df.at[rows, "申請人"]), tickets = df.at[rows, "累計銷售票數"], 
+                                        Total_Sale_Figure = df.at[rows, "累計銷售金額"],)
+        newdata.save()
+
+
+#-------------------------------------------------taiwan movie rank 2017 END
