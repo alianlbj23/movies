@@ -211,60 +211,63 @@ class Box_office_champion_year_world (models.Model): #全球年度票房冠軍
 
 #------------------------------------------------------------------------Taiwan movies 2021 rank START
 class Tawain_movies_rank_2021(models.Model):
-    rank = models.CharField(max_length=10)
+    rank = models.PositiveIntegerField(default=0)
     area = area = models.CharField(max_length=10)
     name = models.CharField(max_length=20)
     dates = models.CharField(max_length=20)
     applicant = models.CharField(max_length=100)
-    tickets = models.CharField(max_length=20)
-    Total_Sale_Figure = models.CharField(max_length=20)
+    tickets = models.PositiveIntegerField(default=0)
+    Total_Sale_Figure = models.PositiveIntegerField(default=0)
+    def __str__(self):
+        return self.name
+
 
 #------------------------------------------------------------------------Taiwan movies rank END
 
 #------------------------------------------------------------------------Taiwan movies 2020 rank START
 class Tawain_movies_rank_2020(models.Model):
-    rank = models.CharField(max_length=10)
+    rank = models.PositiveIntegerField(default=0)
     area = area = models.CharField(max_length=10)
     name = models.CharField(max_length=20)
     dates = models.CharField(max_length=20)
     applicant = models.CharField(max_length=100)
-    tickets = models.CharField(max_length=20)
-    Total_Sale_Figure = models.CharField(max_length=20)
+    tickets = models.PositiveIntegerField(default=0)
+    Total_Sale_Figure =models.PositiveIntegerField(default=0)
 
 #------------------------------------------------------------------------Taiwan movies rank END
 
 #------------------------------------------------------------------------Taiwan movies 2019 rank START
 class Tawain_movies_rank_2019(models.Model):
-    rank = models.CharField(max_length=10)
+    rank = models.PositiveIntegerField(default=0)
     area = area = models.CharField(max_length=10)
     name = models.CharField(max_length=20)
     dates = models.CharField(max_length=20)
     applicant = models.CharField(max_length=100)
-    tickets = models.CharField(max_length=20)
-    Total_Sale_Figure = models.CharField(max_length=20)
+    tickets = models.PositiveIntegerField(default=0)
+    Total_Sale_Figure = models.PositiveIntegerField(default=0)
 
 #------------------------------------------------------------------------Taiwan movies rank END
 
 #------------------------------------------------------------------------Taiwan movies 2018 rank START
 class Tawain_movies_rank_2018(models.Model):
-    rank = models.CharField(max_length=10)
+    rank = models.PositiveIntegerField(default=0)
     area = area = models.CharField(max_length=10)
     name = models.CharField(max_length=20)
     dates = models.CharField(max_length=20)
     applicant = models.CharField(max_length=100)
-    tickets = models.CharField(max_length=20)
-    Total_Sale_Figure = models.CharField(max_length=20)
+    tickets = models.PositiveIntegerField(default=0)
+    Total_Sale_Figure = models.PositiveIntegerField(default=0)
 
 #------------------------------------------------------------------------Taiwan movies rank END
 
 #------------------------------------------------------------------------Taiwan movies 2017 rank START
 class Tawain_movies_rank_2017(models.Model):
-    rank = models.CharField(max_length=10)
+    rank = models.PositiveIntegerField(default=0)
     area = area = models.CharField(max_length=10)
     name = models.CharField(max_length=20)
     dates = models.CharField(max_length=20)
     applicant = models.CharField(max_length=100)
-    tickets = models.CharField(max_length=20)
-    Total_Sale_Figure = models.CharField(max_length=20)
+    tickets = models.PositiveIntegerField(default=0)
+    Total_Sale_Figure = models.PositiveIntegerField(default=0)
 
 #------------------------------------------------------------------------Taiwan movies rank END

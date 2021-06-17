@@ -1,9 +1,14 @@
+
 {% extends "base.html" %}
-{% block title %} test {% endblock %}
+{% block title %}國際城市人口排行{% endblock %}
+{% block headmessage %} <h1>國際城市人口排行長條圖</h1> {% endblock %}
 {% block content %}
 
 <canvas id="myChart" width="400" height="200"></canvas>
+
+
 <script>
+
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
@@ -14,6 +19,7 @@ var myChart = new Chart(ctx, {
             {% endfor %}
         ],
         datasets: [{
+            axis: 'y',
             label: '國際城市人口排行',
             data: [
                 {% for item in items %}
@@ -21,6 +27,7 @@ var myChart = new Chart(ctx, {
                     
                 {% endfor %}
             ],
+            fill: false,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -42,14 +49,15 @@ var myChart = new Chart(ctx, {
     },
     options: {
         scales: {
+            x: {
+                stacked: true
+            },
             y: {
-                beginAtZero: true
+                stacked: true
             }
         }
     }
 });
 </script>
-
-
 
 {% endblock %}
